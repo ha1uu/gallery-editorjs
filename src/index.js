@@ -281,6 +281,10 @@ export default class SimpleCarousel {
     });
     removeBtn.innerHTML = this.IconClose;
     removeBtn.addEventListener('click', () => {
+      let index = Array.from(block.parentNode.children).indexOf(block);
+
+      this.list.children[index].remove();
+
       if (block) {
         block.parentNode.removeChild(block);
       }
@@ -364,9 +368,6 @@ export default class SimpleCarousel {
    */
   removeImage(url) {
     const csrf = document.querySelector('[name=csrf-token]');
-
-    console.log('csrf', csrf);
-    console.log('config', this.config);
 
     if (csrf && this.config.endpoints.removeImage) {
       ajax.post({
