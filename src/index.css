@@ -84,6 +84,7 @@
 }
 
 .cdxcarousel-leftBtn {
+  position: absolute;
   padding: 3px;
   right: 88px;
   top: 10px;
