@@ -169,6 +169,7 @@
 .cdxcarousel-leftBtn, .cdxcarousel-rightBtn {
   width: 20px !important;
   height: 20px !important;
+  padding: 3px !important;
 }
 
 .cdxcarousel-removeBtn {
