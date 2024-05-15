@@ -361,19 +361,22 @@ export default class SimpleCarousel {
    * @private
    */
   removeImage(url) {
-    ajax.post({
-      url: this.config.endpoints.removeImage,
-      data: {
-        image: url,
-      },
-      mode: 'same-origin',
-      type: ajax.contentType.FORM,
-      headers: Object.assign({'X-CSRFToken': document.querySelector('[name=csrf-token]').getAttribute('content')}, this.config.additionalRequestHeaders),
-    }).then(response => {
-      response.body;
-    }).catch((error) => {
-      error.body;
-    });
+    const csrf = document.querySelector('[name=csrf-token]');
+    if (csrf) {
+      ajax.post({
+        url: this.config.endpoints.removeImage,
+        data: {
+          image: url,
+        },
+        mode: 'same-origin',
+        type: ajax.contentType.FORM,
+        headers: Object.assign({'X-CSRFToken': csrf.getAttribute('content')}, this.config.additionalRequestHeaders),
+      }).then(response => {
+        response.body;
+      }).catch((error) => {
+        error.body;
+      });
+    }
   }
 
   /**
