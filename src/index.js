@@ -283,11 +283,22 @@ export default class SimpleCarousel {
     removeBtn.addEventListener('click', () => {
       let index = Array.from(block.parentNode.children).indexOf(block);
 
-      this.list.children[index].remove();
+      console.log('before remove ---------------');
+      console.log('index', index);
+      console.log('block', block);
+      console.log('this.list', this.list);
+      console.log('this._data', this._data);
 
+      // this.list.children[index].remove();
       if (block) {
         block.parentNode.removeChild(block);
       }
+      console.log('after remove ---------------');
+      console.log('index', index);
+      console.log('block', block);
+      console.log('this.list', this.list);
+      console.log('this._data', this._data);
+
       if(this.config.endpoints.removeImage) {
         this.removeImage(block.querySelector('img').getAttribute('src'));
       }
