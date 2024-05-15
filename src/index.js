@@ -362,7 +362,8 @@ export default class SimpleCarousel {
    */
   removeImage(url) {
     const csrf = document.querySelector('[name=csrf-token]');
-    if (csrf) {
+
+    if (csrf && this.config.endpoints.removeImage) {
       ajax.post({
         url: this.config.endpoints.removeImage,
         data: {
