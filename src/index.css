@@ -84,7 +84,6 @@
 }
 
 .cdxcarousel-leftBtn {
-  position: absolute;
   padding: 3px;
   right: 88px;
   top: 10px;
@@ -116,7 +115,7 @@
   align-items: center;
   border-radius: 3px;
   cursor: pointer;
-  border: 0;
+  border: 1px solid #000;
   outline: none;
   background-color: white;
   color: #000;
@@ -168,8 +167,8 @@
 }
 
 .cdxcarousel-leftBtn, .cdxcarousel-rightBtn {
-  width: 10px !important;
-  height: 10px !important;
+  width: 20px !important;
+  height: 20px !important;
 }
 
 .cdxcarousel-removeBtn {
